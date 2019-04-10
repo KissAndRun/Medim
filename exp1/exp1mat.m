@@ -1,8 +1,8 @@
-clear all;close all;
+clear;close all;
 
 %%
 %Path_Working = 'E:\img_process\exp1\';
-Path_Working = '.\';
+Path_Working = './';
 File_img = 'lena.jpg';
 File_DCM = 'CT159.dcm';
 
@@ -14,7 +14,6 @@ imwrite(I1,strcat(Path_Working,'Q10.jpg'),'Quality',10);
 imwrite(I1,strcat(Path_Working,'Q30.jpg'),'Quality',30);
 
 %%
-% Ô½°× Ô½¶à
 figure('color','white'); imshow(I1(:,:,1),[]);title('R,channel')
 figure('color','white'); imshow(I1(:,:,2),[]);title('G,channel')
 figure('color','white'); imshow(I1(:,:,3),[]);title('B,channel')

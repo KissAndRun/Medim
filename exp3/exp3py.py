@@ -28,7 +28,6 @@ I1_0 = np.where(I0<x0, I0*y0/x0 ,0)
 I1_1 = np.where((I0>=x0)&(I0<x1),y0+(I0-x0)*(y1-y0)/(x1-x0), 0)
 I1_2 = np.where(I0>x1, y1+(I0-x1)*(255-y1)/(255-x1), 0)
 I1 = I1_0+I1_1+I1_2
-print(I1)
 
 plt.subplot(121),plt.imshow(I1, cmap='gray'),plt.title("after")
 plt.subplot(122),plt.hist(np.array(I1).flatten(),bins=256)

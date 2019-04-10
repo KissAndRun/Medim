@@ -1,7 +1,7 @@
-clear all
+clc;clear
 
 %%
-Path_Working = 'E:\img_process\exp2\';
+Path_Working = './';
 File_DCM = 'CT159.dcm';
 
 File = strcat(Path_Working,File_DCM);
@@ -21,9 +21,9 @@ for ii = 1:10
         colormap(gray);
         title(strcat('Noisy image',num2str(ii)));
     end
-    I_add = I_add + 1;
+    I_add = I_add + I1;
 end
-%figure;imagesc
+figure;imagesc(I_add/10);colormap(gray);
 
 %%
 File = 'Tshirt1.jpeg';

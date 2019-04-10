@@ -1,7 +1,7 @@
 clc;close all
 
 %%
-Path_Working = 'E:\img_process\exp3\';
+Path_Working = './';
 File = 'SnowWhite.jpg';
 File = strcat(Path_Working,File);
 I1 = imread(File);
@@ -42,7 +42,6 @@ I_ref = imread(File);
 figure('color','white','OuterPosition',[50,100,1200,600]);
 subplot(121);imshow(I_ref);title('reference image');
 subplot(122);imhist(I_ref);title('reference histagram');
-%%
 I4 = imhistmatch(uint8(I1),I_ref);
 figure('color','white','OuterPosition',[50,100,1200,600]);
 subplot(121);imshow(I4,[]);title('immatched image');

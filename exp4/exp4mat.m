@@ -1,7 +1,7 @@
-clear all
+clc;clear 
 
 %% average smoothing filter
-Path_Working = 'E:\img_process\exp4\';
+Path_Working = './';
 File = 'daheilou.jpg';
 File = strcat(Path_Working,File);
 I1 = imread(File);
@@ -49,14 +49,13 @@ I7 = imfilter(I1,H');
 figure;subplot(121);imagesc(I7);colormap(gray);title('vertical edge filter');
 subplot(122);imagesc(abs(I7));colormap(gray);title('abs');
 %%
-I8 = 1+abs(I5);
+I8 = I1+abs(I5);
 figure;imagesc(I8,[0,255]);colormap(gray);title('sharpening filter');
 %%
 F1 = fft2(I1);
 F1 = fftshift(F1);
 absF1 = abs(F1);
 figure;imshow(log(absF1+1),[]);title('logFF1');
-%%
 Fstop = 10;
 sz = size(F1);
 o = sz/2;
@@ -68,7 +67,6 @@ for ix = 1:sz(1)
         end
     end
 end
-%吉布斯振荡出现残影
 figure;imshow(Mask,[]);title('Mask');
 F2 = F1.*Mask;
 figure;imshow(log(abs(F2)+1),[]);title('filter FFT');
@@ -76,7 +74,6 @@ F2 = ifftshift(F2);
 I9 = ifft2(F2);
 figure;imagesc(abs(I9));colormap(gray); title('inverse low pass FFT')
 
-%%
 F3 = F1.*(1-Mask);
 figure;imshow(log(abs(F3)+1),[]);title('filter FFT');
 F3 = ifftshift(F3);
