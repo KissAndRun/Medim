@@ -36,6 +36,7 @@ for ii in range(0,I0.size):
 I2 = Labels.reshape(I0.shape)
 plt.imshow(I2),plt.title('cmeans')
 plt.show()
+
 #
 WM = np.where(I1==I1[100,94],1.0,0)
 plt.imshow(WM)
@@ -50,7 +51,6 @@ plt.subplot(222),plt.imshow(dilation,cmap='gray'),plt.title('dilate')
 plt.subplot(223),plt.imshow(opening,cmap='gray'),plt.title('opening')
 plt.subplot(224),plt.imshow(closing,cmap='gray'),plt.title('closing')
 plt.show()
-
 
 # WaterShed
 feature_image = sitk.GradientMagnitude(I)

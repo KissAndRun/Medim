@@ -1,0 +1,13 @@
+ObjectType = Image
+NDims = 2
+BinaryData = True
+BinaryDataByteOrderMSB = False
+CompressedData = False
+TransformMatrix = 1 0 0 1
+Offset = -113.476 -147.656
+CenterOfRotation = 0 0 0
+AnatomicalOrientation = RAI
+ElementSpacing = 1.36719 1.36719
+DimSize = 178 193
+ElementType = MET_INT
+ElementDataFile = CT_Head_Patient1.raw

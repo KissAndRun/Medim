@@ -12,11 +12,14 @@ I = sitk.ReadImage(File, sitk.sitkFloat32)
 I_data = sitk.GetArrayFromImage(I)
 plt.imshow(I_data[0],cmap='gray')
 plt.show()
+
+# Sobel
 I1 = sitk.SobelEdgeDetection(I)
 I1_data = sitk.GetArrayFromImage(I1)
 plt.imshow(I1_data[0],cmap='gray')
 plt.show()
 
+# prewitty
 kernelx = np.array([[1,1,1],[0,0,0],[-1,-1,-1]])
 kernely = np.array([[-1,0,1],[-1,0,1],[-1,0,1]])
 img_prewittx = cv2.filter2D(I_data[0], -1, kernelx)
@@ -24,7 +27,7 @@ img_prewitty = cv2.filter2D(I_data[0], -1, kernely)
 plt.imshow(np.sqrt(np.power(img_prewittx,2)+np.power(img_prewitty, 2)),cmap='gray')
 plt.show()
 
-
+# Roberts
 kernelx = np.array([[1,0],[0,-1]])
 kernely = np.array([[0,1],[-1,0]])
 img_robertsx = cv2.filter2D(I_data[0], -1, kernelx)
@@ -32,6 +35,7 @@ img_robertsy = cv2.filter2D(I_data[0], -1, kernely)
 plt.imshow(np.sqrt(np.power(img_robertsx,2)+np.power(img_robertsy, 2)),cmap='gray')
 plt.show()
 
+# LOG
 I2 = cv2.GaussianBlur(I_data[0], (5,5), 0)
 I3 = cv2.Laplacian(I2,cv2.CV_32F,5)
 I3 = cv2.convertScaleAbs(I3)
