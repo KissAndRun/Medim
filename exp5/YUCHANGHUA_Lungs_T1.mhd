@@ -1,0 +1,12 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = 0 0 0
+CenterOfRotation = 0 0 0
+ElementSpacing =  0.903614 0.903614 6.6
+DimSize =  384 384 32
+AnatomicalOrientation = ???
+ElementType = MET_SHORT
+ElementDataFile = YUCHANGHUA_Lungs_T1.raw

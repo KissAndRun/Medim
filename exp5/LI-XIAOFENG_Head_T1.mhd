@@ -1,0 +1,12 @@
+ObjectType = Image
+NDims = 3
+BinaryData = True
+BinaryDataByteOrderMSB = False
+TransformMatrix = 1 0 0 0 1 0 0 0 1
+Offset = 0 0 0
+CenterOfRotation = 0 0 0
+ElementSpacing =  0.6875 0.6875 5.2
+DimSize =  312 384 23
+AnatomicalOrientation = ???
+ElementType = MET_SHORT
+ElementDataFile = LI-XIAOFENG_Head_T1.raw
